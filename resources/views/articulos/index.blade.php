@@ -5,6 +5,16 @@
 <div class="container">
 
 
+<div>
+    <nav class="navbar navbar-light bg-light float-right">
+    <form class="form-inline">
+        <input name="buscarpor" class="form-control mr-sm-2" type="search" placeholder="ingrese nombre" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+    </nav>
+</div>
+
+
 
 @if(Session::has('Mensaje'))
 

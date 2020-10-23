@@ -12,10 +12,21 @@ class ArticulosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datos['articulos']=articulos::paginate(8);
+
+        $parametro= $request->get('buscarpor');
+        $datos['articulos']=articulos::where('Nombre','like',"%$parametro%")->paginate(5);
+
+        
+        
         return view('articulos.index',$datos);
+
+
+
+        //$datos['articulos']=articulos::paginate(8);
+        //return view('articulos.index',$datos);
+        
     }
 
     /**
